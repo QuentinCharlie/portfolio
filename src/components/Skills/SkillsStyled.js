@@ -11,6 +11,8 @@ const SkillsStyled = styled.div`
   ul {
     display: flex;
     flex-wrap: wrap;
+    height: 35vh;
+    overflow-y: auto;
 
     
     li {
