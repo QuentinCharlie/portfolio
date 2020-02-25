@@ -1,8 +1,10 @@
 // == Import npm
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Segment, Menu } from 'semantic-ui-react';
+import { Segment, Menu, Flag } from 'semantic-ui-react';
+
 // Import
+import NavStyled from './NavStyled';
 
 // == Composant
 const Nav = () => {
@@ -11,7 +13,7 @@ const Nav = () => {
   };
 
   return (
-    <Segment inverted>
+    <Segment inverted as={NavStyled}>
       <Menu inverted secondary>
         <Menu.Item
           name="Accueil"
@@ -54,6 +56,10 @@ const Nav = () => {
           activeClassName="active"
           onClick={handleItemClick}
         />
+        <div className="flags">
+          <Flag name="fr" />
+          <Flag name="gb" />
+        </div>
       </Menu>
     </Segment>
   );
