@@ -1,8 +1,10 @@
 // == Import : npm
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+import 'semantic-ui-css/semantic.min.css';
 // == Import : local
 import App from 'src/components/App';
 import store from 'src/store';
@@ -12,7 +14,9 @@ import store from 'src/store';
 //    => crée une structure d'objets imbriqués (DOM virtuel)
 const rootReactElement = (
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>
 );
 

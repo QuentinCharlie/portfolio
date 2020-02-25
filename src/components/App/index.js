@@ -1,17 +1,32 @@
-// == Import npm
+// Import npm
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-// == Import
-import reactLogo from './react-logo.svg';
-import './styles.css';
+// Import
+import Nav from 'src/components/Nav';
+import Name from 'src/components/Name';
+import Skills from 'src/components/Skills';
 
-// == Composant
+// Styles
+import AppStyled from './AppStyled';
+
+// Composant
 const App = () => (
-  <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
-  </div>
+  <AppStyled>
+    <Nav />
+    <Switch>
+      <Route exact path="/">
+        <Name />
+      </Route>
+      <Route exact path="/cv">
+        CV
+      </Route>
+      <Route exact path="/competences">
+        <Skills />
+      </Route>
+    </Switch>
+  </AppStyled>
 );
 
-// == Export
+// Export
 export default App;
