@@ -3,6 +3,11 @@ import styled from 'styled-components';
 const NavStyled = styled.div`
   position: relative;
 
+  #burger-menu-icon {
+    display: flex;
+    align-items: center;
+  }
+
   .flags {
     position: absolute;
     right: 0;

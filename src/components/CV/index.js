@@ -16,9 +16,7 @@ const CV = () => {
       <Modal centered trigger={<Button size="massive">Voir mon CV</Button>} closeIcon>
         <Modal.Content
           image
-          style={{
-            'justify-content': 'center',
-          }}
+          style={{ justifyContent: 'center' }}
         >
           <Image className="resume-image" src="https://i.imgur.com/kG1r1P5.jpg" />
         </Modal.Content>
