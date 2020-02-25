@@ -6,103 +6,113 @@ import { Input } from 'semantic-ui-react';
 import SkillsStyled from './SkillsStyled';
 
 // == Composant
-const Skills = () => (
-  <SkillsStyled>
-    <Input autoFocus placeholder="Recherche..." />
-    <ul>
-      <li>
-        <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
-        <span>HTML 5</span>
-      </li>
-      <li>
-        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
-        <span>CSS 3</span>
-      </li>
-      <li>
-        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
-        <span>JavaScript</span>
-      </li>
+const Skills = () => {
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
 
-      <li>
-        <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
-        <span>HTML 5</span>
-      </li>
-      <li>
-        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
-        <span>CSS 3</span>
-      </li>
-      <li>
-        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
-        <span>JavaScript</span>
-      </li>
+  return (
+    <SkillsStyled>
+      <Input
+        autoFocus
+        placeholder="Recherche..."
+        onChange={handleChange}
+      />
+      <ul>
+        <li>
+          <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
+          <span>HTML 5</span>
+        </li>
+        <li>
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
+          <span>CSS 3</span>
+        </li>
+        <li>
+          <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
+          <span>JavaScript</span>
+        </li>
 
-      <li>
-        <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
-        <span>HTML 5</span>
-      </li>
-      <li>
-        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
-        <span>CSS 3</span>
-      </li>
-      <li>
-        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
-        <span>JavaScript</span>
-      </li>
+        <li>
+          <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
+          <span>HTML 5</span>
+        </li>
+        <li>
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
+          <span>CSS 3</span>
+        </li>
+        <li>
+          <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
+          <span>JavaScript</span>
+        </li>
 
-      <li>
-        <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
-        <span>HTML 5</span>
-      </li>
-      <li>
-        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
-        <span>CSS 3</span>
-      </li>
-      <li>
-        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
-        <span>JavaScript</span>
-      </li>
+        <li>
+          <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
+          <span>HTML 5</span>
+        </li>
+        <li>
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
+          <span>CSS 3</span>
+        </li>
+        <li>
+          <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
+          <span>JavaScript</span>
+        </li>
 
-      <li>
-        <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
-        <span>HTML 5</span>
-      </li>
-      <li>
-        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
-        <span>CSS 3</span>
-      </li>
-      <li>
-        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
-        <span>JavaScript</span>
-      </li>
+        <li>
+          <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
+          <span>HTML 5</span>
+        </li>
+        <li>
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
+          <span>CSS 3</span>
+        </li>
+        <li>
+          <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
+          <span>JavaScript</span>
+        </li>
 
-      <li>
-        <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
-        <span>HTML 5</span>
-      </li>
-      <li>
-        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
-        <span>CSS 3</span>
-      </li>
-      <li>
-        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
-        <span>JavaScript</span>
-      </li>
+        <li>
+          <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
+          <span>HTML 5</span>
+        </li>
+        <li>
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
+          <span>CSS 3</span>
+        </li>
+        <li>
+          <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
+          <span>JavaScript</span>
+        </li>
 
-      <li>
-        <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
-        <span>HTML 5</span>
-      </li>
-      <li>
-        <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
-        <span>CSS 3</span>
-      </li>
-      <li>
-        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
-        <span>JavaScript</span>
-      </li>
-    </ul>
-  </SkillsStyled>
-);
+        <li>
+          <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
+          <span>HTML 5</span>
+        </li>
+        <li>
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
+          <span>CSS 3</span>
+        </li>
+        <li>
+          <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
+          <span>JavaScript</span>
+        </li>
+
+        <li>
+          <img src="https://cdn0.iconfinder.com/data/icons/HTML5/512/HTML_Logo.png" alt="" />
+          <span>HTML 5</span>
+        </li>
+        <li>
+          <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" alt="" />
+          <span>CSS 3</span>
+        </li>
+        <li>
+          <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-512.png" alt="" />
+          <span>JavaScript</span>
+        </li>
+      </ul>
+    </SkillsStyled>
+  );
+};
 
 // == Export
 export default Skills;

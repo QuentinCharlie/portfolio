@@ -12,6 +12,10 @@ const Nav = () => {
     console.log('item click');
   };
 
+  const handleFlagClick = (e) => {
+    console.log(e.target.className);
+  };
+
   return (
     <Segment inverted as={NavStyled}>
       <Menu inverted secondary>
@@ -43,7 +47,7 @@ const Nav = () => {
         <Menu.Item
           icon="game"
           as={NavLink}
-          to="/jeux-videos"
+          to="/jeux-video"
           exact
           activeClassName="active"
           onClick={handleItemClick}
@@ -57,8 +61,8 @@ const Nav = () => {
           onClick={handleItemClick}
         />
         <div className="flags">
-          <Flag name="fr" />
-          <Flag name="gb" />
+          <Flag name="fr" onClick={handleFlagClick} />
+          <Flag name="gb" onClick={handleFlagClick} />
         </div>
       </Menu>
     </Segment>
