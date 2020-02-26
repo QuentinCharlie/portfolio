@@ -1,9 +1,8 @@
 @import 'reset';
 
-@font-face {
-  font-family: 'Roboto';
-  src: url(../fonts/Roboto-Regular.ttf);
-}
+/* Roboto */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
 
 /* Specific */
 body {
