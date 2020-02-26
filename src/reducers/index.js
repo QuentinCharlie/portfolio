@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-import demoReducer from './demo';
+// import demoReducer from './demo';
+import skillsReducer from './skills';
 
 const rootReducer = combineReducers({
-  demo: demoReducer,
+  // demo: demoReducer,
+  skills: skillsReducer,
   // ... autres reducers
 });
 

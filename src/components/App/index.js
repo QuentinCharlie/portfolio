@@ -7,7 +7,7 @@ import { Segment } from 'semantic-ui-react';
 import Nav from 'src/components/Nav';
 import Name from 'src/components/Name';
 import CV from 'src/components/CV';
-import Skills from 'src/components/Skills';
+import Skills from 'src/containers/Skills';
 
 // Styles
 import AppStyled from './AppStyled';
