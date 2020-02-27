@@ -1,8 +1,8 @@
 // Types
-export const DO_SOMETHING = 'DO_SOMETHING';
+export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE';
 
 // Creators
-export const doSomething = (message) => ({
-  type: DO_SOMETHING,
-  message,
+export const changeInputValue = (inputValue) => ({
+  type: CHANGE_INPUT_VALUE,
+  inputValue,
 });

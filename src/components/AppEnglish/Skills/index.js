@@ -7,21 +7,22 @@ import { Input } from 'semantic-ui-react';
 import SkillsStyled from './SkillsStyled';
 
 // == Composant
-const Skills = ({ skills }) => {
+const Skills = ({ skills, changeInputValue }) => {
   const handleChange = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
+    changeInputValue(e.target.value);
   };
 
   return (
     <SkillsStyled>
       <Input
         autoFocus
-        placeholder="Recherche..."
+        placeholder="Search..."
         onChange={handleChange}
       />
       <ul>
         {skills.map((skill) => (
-          <li>
+          <li key={skill.id}>
             <img src={skill.imageUrl} alt="" />
             <span>{skill.name}</span>
           </li>
@@ -33,6 +34,7 @@ const Skills = ({ skills }) => {
 
 Skills.propTypes = {
   skills: PropTypes.array.isRequired,
+  changeInputValue: PropTypes.func.isRequired,
 };
 
 // == Export

@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux';
 
-// import demoReducer from './demo';
 import skillsReducer from './skills';
+import navReducer from './nav';
 
 const rootReducer = combineReducers({
-  // demo: demoReducer,
   skills: skillsReducer,
-  // ... autres reducers
+  nav: navReducer,
 });
 
 export default rootReducer;

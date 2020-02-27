@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import {
   Responsive,
@@ -13,13 +14,15 @@ import {
 import NavStyled from './NavStyled';
 
 // == Composant
-const Nav = () => {
+const Nav = ({ changeLang, activeLang }) => {
   const handleItemClick = () => {
-    console.log('item click');
+    // console.log('item click');
   };
 
   const handleFlagClick = (e) => {
-    console.log(e.target.className);
+    // console.log(e.target.className.replace(' flag', ''));
+    const lang = e.target.className.replace(' flag', '');
+    changeLang(lang);
   };
 
   return (
@@ -82,8 +85,12 @@ const Nav = () => {
           </Dropdown.Menu>
         </Dropdown>
         <div className="flags">
-          <Flag name="fr" onClick={handleFlagClick} />
-          <Flag name="gb" onClick={handleFlagClick} />
+          {activeLang === 'gb' && (
+            <Flag name="fr" onClick={handleFlagClick} />
+          )}
+          {activeLang === 'fr' && (
+            <Flag name="gb" onClick={handleFlagClick} />
+          )}
         </div>
       </Responsive>
 
@@ -130,13 +137,22 @@ const Nav = () => {
           onClick={handleItemClick}
         />
         <div className="flags">
-          <Flag name="fr" onClick={handleFlagClick} />
-          <Flag name="gb" onClick={handleFlagClick} />
+          {activeLang === 'gb' && (
+            <Flag name="fr" onClick={handleFlagClick} />
+          )}
+          {activeLang === 'fr' && (
+            <Flag name="gb" onClick={handleFlagClick} />
+          )}
         </div>
       </Responsive>
 
     </Segment>
   );
+};
+
+Nav.propTypes = {
+  changeLang: PropTypes.func.isRequired,
+  activeLang: PropTypes.string.isRequired,
 };
 
 // == Export
