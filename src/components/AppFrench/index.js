@@ -17,15 +17,9 @@ const AppFrench = () => (
   <AppStyled>
     <Nav />
     <Switch>
-      <Route exact path="/">
-        <Name />
-      </Route>
-      <Route exact path="/cv">
-        <CV />
-      </Route>
-      <Route exact path="/competences">
-        <Skills />
-      </Route>
+      <Route exact path="/" component={Name} />
+      <Route exact path="/cv" component={CV} />
+      <Route exact path="/competences" component={Skills} />
       <Route exact path="/jeux-video">
         <Segment inverted tertiary>
           Contenu à venir...

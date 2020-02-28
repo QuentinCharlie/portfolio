@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import {
   Responsive,
   Dropdown,
@@ -9,6 +9,8 @@ import {
   Menu,
   Flag,
 } from 'semantic-ui-react';
+
+import getTranslatedUrl from 'src/utils/lang';
 
 // Import
 import NavStyled from './NavStyled';
@@ -19,10 +21,16 @@ const Nav = ({ changeLang, activeLang }) => {
     // console.log('item click');
   };
 
+  const location = useLocation();
+  const history = useHistory();
+
   const handleFlagClick = (e) => {
     // console.log(e.target.className.replace(' flag', ''));
     const lang = e.target.className.replace(' flag', '');
     changeLang(lang);
+    const currentPath = location.pathname;
+    const translatedUrl = getTranslatedUrl(currentPath);
+    history.push(translatedUrl);
   };
 
   return (

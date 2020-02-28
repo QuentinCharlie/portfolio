@@ -17,15 +17,9 @@ const AppEnglish = () => (
   <AppStyled>
     <Nav />
     <Switch>
-      <Route exact path="/">
-        <Name />
-      </Route>
-      <Route exact path="/resume">
-        <CV />
-      </Route>
-      <Route exact path="/skills">
-        <Skills />
-      </Route>
+      <Route exact path="/" component={Name} />
+      <Route exact path="/resume" component={CV} />
+      <Route exact path="/skills" component={Skills} />
       <Route exact path="/video-games">
         <Segment inverted tertiary>
           Soon...
