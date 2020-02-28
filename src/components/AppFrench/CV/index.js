@@ -22,6 +22,8 @@ const CV = () => {
         </Modal.Content>
       </Modal>
       <Button
+        download
+        href="/cv.jpg"
         size="huge"
         icon="download"
         onClick={handleClick}
