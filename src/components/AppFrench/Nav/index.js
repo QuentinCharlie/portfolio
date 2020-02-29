@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import {
@@ -21,6 +21,17 @@ const Nav = ({ changeLang, activeLang }) => {
   };
 
   const location = useLocation();
+
+  useEffect(() => {
+    if (activeLang === 'fr' && (
+      location.pathname === '/resume'
+      || location.pathname === '/skills'
+      || location.pathname === '/video-games'
+      || location.pathname === '/pictures')) {
+      changeLang('gb');
+    }
+  }, [useLocation]);
+
   const history = useHistory();
 
   const handleFlagClick = (e) => {
