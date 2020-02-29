@@ -13,15 +13,17 @@ const SkillsStyled = styled.div`
     flex-wrap: wrap;
     height: 35vh;
     overflow-y: auto;
+    justify-content: center;
 
     
     li {
       display: flex;
       align-items: center;
       padding: 0.5em;
+      font-size: 1.3em;
 
       img {
-      width: 30px;
+      width: 50px;
       margin-right: 0.5em;
       }
     }

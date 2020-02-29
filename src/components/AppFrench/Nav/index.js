@@ -7,7 +7,6 @@ import {
   Dropdown,
   Segment,
   Menu,
-  Flag,
 } from 'semantic-ui-react';
 
 import getTranslatedUrl from 'src/utils/lang';
@@ -94,10 +93,10 @@ const Nav = ({ changeLang, activeLang }) => {
         </Dropdown>
         <div className="flags">
           {activeLang === 'gb' && (
-            <Flag name="fr" onClick={handleFlagClick} />
+            <div className="fr flag" onClick={handleFlagClick} />
           )}
           {activeLang === 'fr' && (
-            <Flag name="gb" onClick={handleFlagClick} />
+            <div className="gb flag" onClick={handleFlagClick} />
           )}
         </div>
       </Responsive>
@@ -146,10 +145,10 @@ const Nav = ({ changeLang, activeLang }) => {
         />
         <div className="flags">
           {activeLang === 'gb' && (
-            <Flag name="fr" onClick={handleFlagClick} />
+            <div className="fr flag" onClick={handleFlagClick} />
           )}
           {activeLang === 'fr' && (
-            <Flag name="gb" onClick={handleFlagClick} />
+            <div className="gb flag" onClick={handleFlagClick} />
           )}
         </div>
       </Responsive>

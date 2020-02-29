@@ -10,13 +10,17 @@ const NavStyled = styled.div`
 
   .flags {
     position: absolute;
-    right: 0;
-    display:flex;
-    flex-direction: column;
+    right: 1em; 
+    bottom: calc(50% - (25px / 2));
 
     .flag {
-      margin-top: 5px;
-      width: 20px;
+      height: 25px
+    }
+    .gb {     
+      content: url("http://icons.iconarchive.com/icons/gosquared/flag/64/United-Kingdom-icon.png");
+    }
+    .fr {
+      content: url("http://icons.iconarchive.com/icons/gosquared/flag/64/France-icon.png");
     }
   }
 `;
