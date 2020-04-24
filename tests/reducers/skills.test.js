@@ -10,7 +10,7 @@ import data from 'src/data/data';
 
 // Tests
 
-describe('Test sur le reducer : user', () => {
+describe('Test sur le reducer : skills', () => {
   describe('structure', () => {
     it('expected to be a function', () => {
       expect(skillsReducer).to.be.a('function');
