@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "axios": "*",
+    "minimist": "^1.2.5",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
