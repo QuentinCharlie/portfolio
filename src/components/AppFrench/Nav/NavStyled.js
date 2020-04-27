@@ -12,6 +12,7 @@ const NavStyled = styled.div`
     position: absolute;
     right: 1em; 
     bottom: calc(50% - (25px / 2));
+    cursor: pointer;
 
     .flag {
       height: 25px

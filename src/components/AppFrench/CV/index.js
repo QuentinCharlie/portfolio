@@ -18,7 +18,7 @@ const CV = () => {
           image
           style={{ justifyContent: 'center' }}
         >
-          <Image className="resume-image" src="https://i.imgur.com/kG1r1P5.jpg" />
+          <Image className="resume-image" src="https://i.imgur.com/ilWCCLF.jpg" />
         </Modal.Content>
       </Modal>
       <Button
