@@ -8,6 +8,7 @@ import {
   changeContactValue,
   changeLoading,
   sendContactForm,
+  resetResultMessage,
 } from 'src/actions/contact';
 
 // == Data / state
@@ -18,6 +19,7 @@ const mapStateToProps = (state) => ({
   contactState: state.contact,
   lang: state.nav.lang,
   isLoading: state.contact.isLoading,
+  resultMessage: state.contact.resultMessage,
 });
 
 // == Actions / dispatch
@@ -30,6 +32,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   sendContactForm: (contactInfo) => {
     dispatch(sendContactForm(contactInfo));
+  },
+  resetResultMessage: () => {
+    dispatch(resetResultMessage());
   },
 });
 

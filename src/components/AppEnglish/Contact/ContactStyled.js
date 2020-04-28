@@ -7,7 +7,7 @@ const ContactStyled = styled.div`
     text-align: left;
   }
   .button {
-    margin-top: 1.2em;
+    margin: 1.2em 0;
   }
 `;
 
