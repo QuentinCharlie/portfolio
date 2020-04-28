@@ -35,36 +35,36 @@ const Contact = ({
     <ContactStyled>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
-          <label htmlFor="name">Votre Nom</label>
+          <label htmlFor="name">Your name</label>
           <input
             id="name"
             type="text"
-            placeholder="Votre Nom"
+            placeholder="Your name"
             value={name}
             onChange={changeValue}
           />
         </Form.Field>
         <Form.Field>
-          <label htmlFor="email">Votre email</label>
+          <label htmlFor="email">Your email</label>
           <input
             id="email"
             type="email"
-            placeholder="Votre email"
+            placeholder="Your email"
             value={email}
             onChange={changeValue}
           />
         </Form.Field>
         <Form.Field>
-          <label htmlFor="message">Votre message</label>
+          <label htmlFor="message">Your message</label>
           <textarea
             id="message"
             type="text"
-            placeholder="Votre message..."
+            placeholder="Your message..."
             value={message}
             onChange={changeValue}
           />
         </Form.Field>
-        <Button type="submit">Envoyer</Button>
+        <Button type="submit">Send</Button>
       </Form>
     </ContactStyled>
   );

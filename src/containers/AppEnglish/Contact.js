@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 // Import du composant qui a besoin de data ou d'actions
-import Contact from 'src/components/AppFrench/Contact';
+import Contact from 'src/components/AppEnglish/Contact';
 
 // Action Creators
 import { changeContactValue, sendContactForm } from 'src/actions/contact';
