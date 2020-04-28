@@ -1,7 +1,6 @@
 // Import npm
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Segment } from 'semantic-ui-react';
 
 // Import
 import Nav from 'src/containers/AppFrench/Nav';
