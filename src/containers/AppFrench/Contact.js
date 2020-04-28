@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Contact from 'src/components/AppFrench/Contact';
 
 // Action Creators
-import { changeContactValue } from 'src/actions/contact';
+import { changeContactValue, sendContactForm } from 'src/actions/contact';
 
 // == Data / state
 const mapStateToProps = (state) => ({
@@ -18,6 +18,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   changeContactValue: (id, value) => {
     dispatch(changeContactValue(id, value));
+  },
+  sendContactForm: (contactState) => {
+    dispatch(sendContactForm(contactState));
   },
 });
 

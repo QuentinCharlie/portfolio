@@ -14,6 +14,7 @@ const Contact = ({
   message,
   changeContactValue,
   contactState,
+  sendContactForm,
 }) => {
   const changeValue = (e) => {
     const { id } = e.currentTarget;
@@ -22,7 +23,8 @@ const Contact = ({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(contactState);
+    // console.log(contactState);
+    sendContactForm(contactState);
   };
   return (
     <ContactStyled>
@@ -69,6 +71,7 @@ Contact.propTypes = {
   message: PropTypes.string.isRequired,
   changeContactValue: PropTypes.func.isRequired,
   contactState: PropTypes.object.isRequired,
+  sendContactForm: PropTypes.func.isRequired,
 };
 
 // == Export
