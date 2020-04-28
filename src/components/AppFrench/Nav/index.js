@@ -93,9 +93,9 @@ const Nav = ({ changeLang, activeLang }) => {
               onClick={handleItemClick}
             />
             <Dropdown.Item
-              icon="photo"
+              icon="envelope"
               as={NavLink}
-              to="/photos"
+              to="/contact"
               exact
               activeClassName="active"
               onClick={handleItemClick}
@@ -147,9 +147,9 @@ const Nav = ({ changeLang, activeLang }) => {
           onClick={handleItemClick}
         />
         <Menu.Item
-          icon="photo"
+          icon="envelope"
           as={NavLink}
-          to="/photos"
+          to="/contact"
           exact
           activeClassName="active"
           onClick={handleItemClick}

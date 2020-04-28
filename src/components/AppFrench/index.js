@@ -9,6 +9,7 @@ import Name from 'src/components/AppFrench/Name';
 import CV from 'src/components/AppFrench/CV';
 import Skills from 'src/containers/AppFrench/Skills';
 import Game from 'src/components/AppFrench/Game';
+import Contact from 'src/containers/AppFrench/Contact';
 
 // Styles
 import AppStyled from './AppStyled';
@@ -22,11 +23,7 @@ const AppFrench = () => (
       <Route exact path="/cv" component={CV} />
       <Route exact path="/competences" component={Skills} />
       <Route exact path="/jeux-video" component={Game} />
-      <Route exact path="/photos">
-        <Segment inverted tertiary>
-          Contenu à venir...
-        </Segment>
-      </Route>
+      <Route exact path="/contact" component={Contact} />
     </Switch>
   </AppStyled>
 );
