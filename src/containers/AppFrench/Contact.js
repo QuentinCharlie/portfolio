@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import Contact from 'src/components/AppFrench/Contact';
 
 // Action Creators
-import { changeContactValue, sendContactForm } from 'src/actions/contact';
+import {
+  changeContactValue,
+  changeLoading,
+  sendContactForm,
+} from 'src/actions/contact';
 
 // == Data / state
 const mapStateToProps = (state) => ({
@@ -13,12 +17,16 @@ const mapStateToProps = (state) => ({
   message: state.contact.message,
   contactState: state.contact,
   lang: state.nav.lang,
+  isLoading: state.contact.isLoading,
 });
 
 // == Actions / dispatch
 const mapDispatchToProps = (dispatch) => ({
   changeContactValue: (id, value) => {
     dispatch(changeContactValue(id, value));
+  },
+  changeLoading: () => {
+    dispatch(changeLoading());
   },
   sendContactForm: (contactInfo) => {
     dispatch(sendContactForm(contactInfo));
