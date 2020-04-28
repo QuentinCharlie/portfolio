@@ -9,7 +9,7 @@ import Name from 'src/components/AppFrench/Name';
 import CV from 'src/components/AppFrench/CV';
 import Skills from 'src/containers/AppFrench/Skills';
 import Game from 'src/components/AppFrench/Game';
-import Contact from 'src/components/AppFrench/Contact';
+import Contact from 'src/containers/AppFrench/Contact';
 
 // Styles
 import AppStyled from './AppStyled';
