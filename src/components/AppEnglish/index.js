@@ -22,7 +22,7 @@ const AppEnglish = () => (
       <Route exact path="/resume" component={CV} />
       <Route exact path="/skills" component={Skills} />
       <Route exact path="/video-games" component={Game} />
-      <Route exact path="/pictures">
+      <Route exact path="/contact">
         <Segment inverted tertiary>
           Soon...
         </Segment>
