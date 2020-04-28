@@ -13,15 +13,20 @@ const Contact = ({
   email,
   message,
   changeContactValue,
+  contactState,
 }) => {
   const changeValue = (e) => {
     const { id } = e.currentTarget;
     const { value } = e.currentTarget;
     changeContactValue(id, value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(contactState);
+  };
   return (
     <ContactStyled>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Field>
           <label htmlFor="name">Votre Nom</label>
           <input
@@ -63,6 +68,7 @@ Contact.propTypes = {
   email: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
   changeContactValue: PropTypes.func.isRequired,
+  contactState: PropTypes.object.isRequired,
 };
 
 // == Export

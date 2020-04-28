@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
   name: state.contact.name,
   email: state.contact.email,
   message: state.contact.message,
+  contactState: state.contact,
 });
 
 // == Actions / dispatch
