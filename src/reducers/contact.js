@@ -1,5 +1,5 @@
 // Action Types
-import { CHANGE_CONTACT_VALUE } from 'src/actions/contact';
+import { CHANGE_CONTACT_VALUE, RESET_FORM } from 'src/actions/contact';
 
 // Initial State
 const initialState = {
@@ -15,6 +15,15 @@ const contactReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.id]: action.value,
+      };
+    }
+
+    case RESET_FORM: {
+      return {
+        ...state,
+        name: '',
+        email: '',
+        message: '',
       };
     }
 

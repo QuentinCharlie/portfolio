@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 
-import { SEND_CONTACT_FORM } from 'src/actions/contact';
+import { SEND_CONTACT_FORM, resetForm } from 'src/actions/contact';
 
 const ajaxMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -15,7 +15,7 @@ const ajaxMiddleware = (store) => (next) => (action) => {
         // succès
         .then((response) => {
           console.log('message sent', response);
-          // resetForm()
+          store.dispatch(resetForm());
         })
         // échec
         .catch((error) => {

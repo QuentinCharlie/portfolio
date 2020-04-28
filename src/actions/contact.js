@@ -1,6 +1,7 @@
 // Types
 export const CHANGE_CONTACT_VALUE = 'CHANGE_CONTACT_VALUE';
 export const SEND_CONTACT_FORM = 'SEND_CONTACT_FORM';
+export const RESET_FORM = 'RESET_FORM';
 
 // Creators
 export const changeContactValue = (id, value) => ({
@@ -12,4 +13,8 @@ export const changeContactValue = (id, value) => ({
 export const sendContactForm = (contactInfo) => ({
   type: SEND_CONTACT_FORM,
   contactInfo,
+});
+
+export const resetForm = () => ({
+  type: RESET_FORM,
 });
