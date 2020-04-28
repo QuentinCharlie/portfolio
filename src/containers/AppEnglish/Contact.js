@@ -12,6 +12,7 @@ const mapStateToProps = (state) => ({
   email: state.contact.email,
   message: state.contact.message,
   contactState: state.contact,
+  lang: state.nav.lang,
 });
 
 // == Actions / dispatch
@@ -19,8 +20,8 @@ const mapDispatchToProps = (dispatch) => ({
   changeContactValue: (id, value) => {
     dispatch(changeContactValue(id, value));
   },
-  sendContactForm: (contactState) => {
-    dispatch(sendContactForm(contactState));
+  sendContactForm: (contactInfo) => {
+    dispatch(sendContactForm(contactInfo));
   },
 });
 

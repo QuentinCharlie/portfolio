@@ -10,7 +10,7 @@ const ajaxMiddleware = (store) => (next) => (action) => {
       axios({
         method: 'POST',
         url: 'http://localhost:3002/send',
-        data: action.contactState,
+        data: action.contactInfo,
       })
         // succès
         .then((response) => {

@@ -9,7 +9,7 @@ export const changeContactValue = (id, value) => ({
   value,
 });
 
-export const sendContactForm = (contactState) => ({
+export const sendContactForm = (contactInfo) => ({
   type: SEND_CONTACT_FORM,
-  contactState,
+  contactInfo,
 });
