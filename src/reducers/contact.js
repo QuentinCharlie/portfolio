@@ -1,11 +1,16 @@
 // Action Types
-import { CHANGE_CONTACT_VALUE, RESET_FORM } from 'src/actions/contact';
+import {
+  CHANGE_CONTACT_VALUE,
+  CHANGE_LOADING,
+  RESET_FORM,
+} from 'src/actions/contact';
 
 // Initial State
 const initialState = {
   name: '',
   email: '',
   message: '',
+  isLoading: false,
 };
 
 // Reducer
@@ -18,12 +23,20 @@ const contactReducer = (state = initialState, action = {}) => {
       };
     }
 
+    case CHANGE_LOADING: {
+      return {
+        ...state,
+        isLoading: !state.isLoading,
+      };
+    }
+
     case RESET_FORM: {
       return {
         ...state,
         name: '',
         email: '',
         message: '',
+        isLoading: false,
       };
     }
 

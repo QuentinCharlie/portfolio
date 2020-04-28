@@ -16,6 +16,8 @@ const Contact = ({
   contactState,
   sendContactForm,
   lang,
+  isLoading,
+  changeLoading,
 }) => {
   const changeValue = (e) => {
     const { id } = e.currentTarget;
@@ -24,6 +26,7 @@ const Contact = ({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    changeLoading();
     // console.log(contactState);
     const contactInfo = {
       ...contactState,
@@ -64,7 +67,7 @@ const Contact = ({
             onChange={changeValue}
           />
         </Form.Field>
-        <Button type="submit">Envoyer</Button>
+        <Button type="submit" loading={isLoading}>Envoyer</Button>
       </Form>
     </ContactStyled>
   );
@@ -78,6 +81,8 @@ Contact.propTypes = {
   contactState: PropTypes.object.isRequired,
   sendContactForm: PropTypes.func.isRequired,
   lang: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  changeLoading: PropTypes.func.isRequired,
 };
 
 // == Export
