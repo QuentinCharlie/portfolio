@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Message } from 'semantic-ui-react';
 
 // == Import
 import ContactStyled from './ContactStyled';
@@ -18,6 +18,8 @@ const Contact = ({
   lang,
   isLoading,
   changeLoading,
+  resultMessage,
+  resetResultMessage,
 }) => {
   const changeValue = (e) => {
     const { id } = e.currentTarget;
@@ -34,6 +36,11 @@ const Contact = ({
     };
     sendContactForm(contactInfo);
   };
+  useEffect(() => {
+    setTimeout(() => {
+      resetResultMessage();
+    }, 5000);
+  }, [resultMessage !== '']);
   return (
     <ContactStyled>
       <Form onSubmit={handleSubmit}>
@@ -69,6 +76,22 @@ const Contact = ({
         </Form.Field>
         <Button type="submit" loading={isLoading}>Envoyer</Button>
       </Form>
+
+      {resultMessage === 'success' && (
+        <Message
+          success
+          header="Votre message a bien été envoyé !"
+          content="Une confirmation a également été envoyé à l'adresse mail que vous avez renseigné."
+        />
+      )}
+
+      {resultMessage === 'error' && (
+        <Message
+          negative
+          header="Oups, ça n'a pas marché..."
+          content="Veuillez vérifier si vos informations sont correctes."
+        />
+      )}
     </ContactStyled>
   );
 };
@@ -83,6 +106,8 @@ Contact.propTypes = {
   lang: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
   changeLoading: PropTypes.func.isRequired,
+  resultMessage: PropTypes.string.isRequired,
+  resetResultMessage: PropTypes.func.isRequired,
 };
 
 // == Export

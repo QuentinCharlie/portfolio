@@ -3,6 +3,9 @@ import {
   CHANGE_CONTACT_VALUE,
   CHANGE_LOADING,
   RESET_FORM,
+  DISPLAY_SUCCESS_MESSAGE,
+  DISPLAY_ERROR_MESSAGE,
+  RESET_RESULT_MESSAGE,
 } from 'src/actions/contact';
 
 // Initial State
@@ -11,6 +14,7 @@ const initialState = {
   email: '',
   message: '',
   isLoading: false,
+  resultMessage: '',
 };
 
 // Reducer
@@ -37,6 +41,27 @@ const contactReducer = (state = initialState, action = {}) => {
         email: '',
         message: '',
         isLoading: false,
+      };
+    }
+
+    case DISPLAY_SUCCESS_MESSAGE: {
+      return {
+        ...state,
+        resultMessage: 'success',
+      };
+    }
+
+    case DISPLAY_ERROR_MESSAGE: {
+      return {
+        ...state,
+        resultMessage: 'error',
+      };
+    }
+
+    case RESET_RESULT_MESSAGE: {
+      return {
+        ...state,
+        resultMessage: '',
       };
     }
 
