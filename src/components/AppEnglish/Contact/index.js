@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Form, Message } from 'semantic-ui-react';
+import classNames from 'classnames';
 
 // == Import
 import validate from 'src/utils/emailValidator';
@@ -28,9 +29,6 @@ const Contact = ({
     const { value } = e.currentTarget;
     changeContactValue(id, value);
   };
-  // const expression = /\S+@\S+/;
-  // expression.test(String(email).toLowerCase())
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name !== '' && validate(email) && message.length >= 10) {
@@ -52,13 +50,26 @@ const Contact = ({
       resetResultMessage();
     }, 10000);
   }, [resultMessage !== '']);
+
+  const classNameNameCSS = classNames(
+    'required',
+    name === '' ? 'notok' : 'ok',
+  );
+  const classNameEmailCSS = classNames(
+    'required',
+    email === '' || !validate(email) ? 'notok' : 'ok',
+  );
+  const classNameMessageCSS = classNames(
+    'required',
+    message === '' || message.length < 10 ? 'notok' : 'ok',
+  );
   return (
     <ContactStyled>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
           <label htmlFor="name">
             Your name
-            <span className="required">
+            <span className={classNameNameCSS}>
               {name === '' ? 'required' : 'Ok'}
             </span>
           </label>
@@ -73,7 +84,7 @@ const Contact = ({
         <Form.Field>
           <label htmlFor="email">
             Your email
-            <span className="required">
+            <span className={classNameEmailCSS}>
               {email === '' ? 'required' : ''}
               {email !== '' && !validate(email) ? 'invalid email' : ''}
               {validate(email) ? 'Ok' : ''}
@@ -90,10 +101,10 @@ const Contact = ({
         <Form.Field>
           <label htmlFor="message">
             Your message
-            <span className="required">
+            <span className={classNameMessageCSS}>
               {message === '' ? 'at least 10 characters' : ''}
               {message !== '' && message.length < 10
-                ? `need ${10 - message.length} more character${message.length < 9 ? 's' : ''}` : ''}
+                ? `${10 - message.length} more character${message.length < 9 ? 's' : ''} needed` : ''}
               {message.length >= 10 ? 'Ok' : ''}
             </span>
           </label>
@@ -121,9 +132,9 @@ const Contact = ({
           negative
           header="Oops, something went wrong..."
           content={`Please check the following field(s) : 
-            ${name === '' ? 'name' : ''}
-            ${email === '' || !validate(email) ? 'email' : ''}
-            ${message.length < 10 ? 'message' : ''}
+            ${name === '' ? 'Name' : ''}
+            ${email === '' || !validate(email) ? 'Email' : ''}
+            ${message.length < 10 ? 'Message' : ''}
           `}
         />
       )}

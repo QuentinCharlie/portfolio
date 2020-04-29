@@ -16,6 +16,12 @@ const ContactStyled = styled.div`
     font-style: italic;
     font-weight: normal;
   }
+  .notok {
+    color: rgba(192, 57, 43, 1);
+  }
+  .ok {
+    color: rgba(38, 166, 91, 1);
+  }
 `;
 
 export default ContactStyled;
