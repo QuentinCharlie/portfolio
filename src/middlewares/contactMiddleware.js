@@ -21,13 +21,11 @@ const ajaxMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log('message envoyé', response);
           store.dispatch(resetForm());
-          // @todo sucess message
           store.dispatch(displaySuccessMessage());
         })
         // échec
         .catch((error) => {
           console.log('Une erreur s\'est produite', error);
-          // @todo error message
           store.dispatch(displayErrorMessage());
         });
       break;

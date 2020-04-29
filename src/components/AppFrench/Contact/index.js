@@ -3,8 +3,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Form, Message } from 'semantic-ui-react';
+import classNames from 'classnames';
 
 // == Import
+import validate from 'src/utils/emailValidator';
 import ContactStyled from './ContactStyled';
 
 // == Composant
@@ -20,6 +22,7 @@ const Contact = ({
   changeLoading,
   resultMessage,
   resetResultMessage,
+  displayErrorMessage,
 }) => {
   const changeValue = (e) => {
     const { id } = e.currentTarget;
@@ -28,24 +31,48 @@ const Contact = ({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    changeLoading();
-    // console.log(contactState);
-    const contactInfo = {
-      ...contactState,
-      lang,
-    };
-    sendContactForm(contactInfo);
+    if (name !== '' && validate(email) && message.length >= 10) {
+      changeLoading();
+      // console.log(contactState);
+      const contactInfo = {
+        ...contactState,
+        lang,
+      };
+      sendContactForm(contactInfo);
+    }
+    else {
+      // console.log('erreur');
+      displayErrorMessage();
+    }
   };
-  useEffect(() => {
+  useEffect(() => { // reset the success/error message after 10sec
     setTimeout(() => {
       resetResultMessage();
-    }, 5000);
+    }, 10000);
   }, [resultMessage !== '']);
+
+  const classNameNameCSS = classNames(
+    'required',
+    name === '' ? 'notok' : 'ok',
+  );
+  const classNameEmailCSS = classNames(
+    'required',
+    email === '' || !validate(email) ? 'notok' : 'ok',
+  );
+  const classNameMessageCSS = classNames(
+    'required',
+    message === '' || message.length < 10 ? 'notok' : 'ok',
+  );
   return (
     <ContactStyled>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
-          <label htmlFor="name">Votre Nom</label>
+          <label htmlFor="name">f
+            Votre nom
+            <span className={classNameNameCSS}>
+              {name === '' ? 'requis' : 'Ok'}
+            </span>
+          </label>
           <input
             id="name"
             type="text"
@@ -55,7 +82,14 @@ const Contact = ({
           />
         </Form.Field>
         <Form.Field>
-          <label htmlFor="email">Votre email</label>
+          <label htmlFor="email">
+            Votre email
+            <span className={classNameEmailCSS}>
+              {email === '' ? 'requis' : ''}
+              {email !== '' && !validate(email) ? 'email invalide' : ''}
+              {validate(email) ? 'Ok' : ''}
+            </span>
+          </label>
           <input
             id="email"
             type="email"
@@ -65,7 +99,15 @@ const Contact = ({
           />
         </Form.Field>
         <Form.Field>
-          <label htmlFor="message">Votre message</label>
+          <label htmlFor="message">
+            Votre message
+            <span className={classNameMessageCSS}>
+              {message === '' ? 'au moins 10 caractères' : ''}
+              {message !== '' && message.length < 10
+                ? `encore ${10 - message.length} caractère${message.length < 9 ? 's' : ''} requis` : ''}
+              {message.length >= 10 ? 'Ok' : ''}
+            </span>
+          </label>
           <textarea
             id="message"
             type="text"
@@ -89,7 +131,11 @@ const Contact = ({
         <Message
           negative
           header="Oups, ça n'a pas marché..."
-          content="Veuillez vérifier si vos informations sont correctes."
+          content={`Veuillez vérifier ce(s) champ(s) : 
+            ${name === '' ? 'Nom' : ''}
+            ${email === '' || !validate(email) ? 'Email' : ''}
+            ${message.length < 10 ? 'Message' : ''}
+          `}
         />
       )}
     </ContactStyled>
@@ -108,6 +154,7 @@ Contact.propTypes = {
   changeLoading: PropTypes.func.isRequired,
   resultMessage: PropTypes.string.isRequired,
   resetResultMessage: PropTypes.func.isRequired,
+  displayErrorMessage: PropTypes.func.isRequired,
 };
 
 // == Export
