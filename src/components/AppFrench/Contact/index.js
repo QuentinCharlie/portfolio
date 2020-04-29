@@ -67,7 +67,7 @@ const Contact = ({
     <ContactStyled>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
-          <label htmlFor="name">
+          <label htmlFor="name">f
             Votre nom
             <span className={classNameNameCSS}>
               {name === '' ? 'requis' : 'Ok'}
