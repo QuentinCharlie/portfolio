@@ -1,8 +1,26 @@
 import styled from 'styled-components';
 
 const ContactStyled = styled.div`
-  /* @todo media queries for width*/
-  width: 25%; 
+  @media (max-width: 320px) {
+    width: 90%; 
+  }
+  @media (min-width: 321px) and (max-width: 480px) {
+    width: 70%; 
+  }
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 50%; 
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    width: 35%; 
+  }
+  @media (min-width: 1025px) and (max-width: 1250px) {
+    width: 30%; 
+  }
+  @media (min-width: 1251px) {
+    width: 25%; 
+  }
+  height: calc(100vh - 100px);
+  overflow-y: auto;
   margin: 1em auto 0 auto;
   label {
     text-align: left;
@@ -25,4 +43,3 @@ const ContactStyled = styled.div`
 `;
 
 export default ContactStyled;
-
