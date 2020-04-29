@@ -9,6 +9,7 @@ import {
   changeLoading,
   sendContactForm,
   resetResultMessage,
+  displayErrorMessage,
 } from 'src/actions/contact';
 
 // == Data / state
@@ -35,6 +36,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   resetResultMessage: () => {
     dispatch(resetResultMessage());
+  },
+  displayErrorMessage: () => {
+    dispatch(displayErrorMessage());
   },
 });
 

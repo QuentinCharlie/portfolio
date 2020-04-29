@@ -39,7 +39,7 @@ const Contact = ({
   useEffect(() => {
     setTimeout(() => {
       resetResultMessage();
-    }, 5000);
+    }, 10000);
   }, [resultMessage !== '']);
   return (
     <ContactStyled>
