@@ -66,7 +66,7 @@ const Contact = ({
   return (
     <ContactStyled>
       <div className="title">Contactez-moi !</div>
-      <div className="linkedin">Vous pouvez le faire via <a href="https://www.linkedin.com/in/quentin-charlie/">Linkedin</a> <br /> ou en remplissant le formulaire ci-dessous.</div>
+      <div className="linkedin">Vous pouvez le faire via <a href="https://www.linkedin.com/in/quentin-charlie/" target="_blank" rel="noopener noreferrer">Linkedin</a> <br /> ou en remplissant le formulaire ci-dessous.</div>
       <Form onSubmit={handleSubmit}>
         <Form.Field>
           <label htmlFor="name">
