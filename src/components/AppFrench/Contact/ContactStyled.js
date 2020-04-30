@@ -22,6 +22,19 @@ const ContactStyled = styled.div`
   height: calc(100vh - 100px);
   overflow-y: auto;
   margin: 1em auto 0 auto;
+  .title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 1em 0;
+  }
+  .linkedin {
+    font-size: 1.1em;
+    margin-bottom: 1.2em;
+    a {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  }
   label {
     text-align: left;
   }
