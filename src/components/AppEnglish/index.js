@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 // Import
 import Nav from 'src/containers/AppEnglish/Nav';
-import Name from 'src/components/AppEnglish/Name';
+import Name from 'src/containers/AppEnglish/Name';
 import CV from 'src/components/AppEnglish/CV';
 import Skills from 'src/containers/AppEnglish/Skills';
 import Game from 'src/components/AppEnglish/Game';

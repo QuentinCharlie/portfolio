@@ -11,7 +11,7 @@ import Game from 'src/components/AppFrench/Game';
 import Contact from 'src/containers/AppFrench/Contact';
 
 // Styles
-import AppStyled from './AppStyled';
+import AppStyled from 'src/components/AppEnglish/AppStyled';
 
 // Composant
 const AppFrench = () => (

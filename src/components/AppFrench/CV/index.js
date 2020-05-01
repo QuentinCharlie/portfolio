@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, Modal, Image } from 'semantic-ui-react';
 
 // == Import
-import CVStyled from './CVStyled';
+import CVStyled from 'src/components/AppEnglish/CV/CVStyled';
 
 // == Composant
 const CV = () => {

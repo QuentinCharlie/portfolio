@@ -12,7 +12,7 @@ import {
 import getTranslatedUrl from 'src/utils/lang';
 
 // Import
-import NavStyled from './NavStyled';
+import NavStyled from 'src/components/AppEnglish/Nav/NavStyled';
 
 // == Composant
 const Nav = ({ changeLang, activeLang }) => {

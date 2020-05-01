@@ -7,7 +7,7 @@ import ReactPlayer from 'react-player';
 // import { Segment } from 'semantic-ui-react';
 
 // == Import
-import GameStyled from './GameStyled';
+import GameStyled from 'src/components/AppEnglish/Game/GameStyled';
 
 // == Composant
 const Game = () => {

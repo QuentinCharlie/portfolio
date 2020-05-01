@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 // == Import
 import validate from 'src/utils/emailValidator';
-import ContactStyled from './ContactStyled';
+import ContactStyled from 'src/components/AppEnglish/Contact/ContactStyled';
 
 // == Composant
 const Contact = ({

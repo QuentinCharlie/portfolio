@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Input } from 'semantic-ui-react';
 
 // == Import
-import SkillsStyled from './SkillsStyled';
+import SkillsStyled from 'src/components/AppEnglish/Skills/SkillsStyled';
 
 // == Composant
 const Skills = ({ skills, changeInputValue }) => {
